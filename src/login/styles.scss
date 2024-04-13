@@ -1,11 +1,22 @@
 @use '../visual/colors/colors' as colors;
+@use '../visual/fonts/fonts' as fonts;
 
 /* general */
 body {
     background-color: colors.$bkg;
 }
 
-/* header */
-.loginbar__text {
-    color: colors.$bkg;
+.loginpage {
+    display: flex;
+    @include fonts.main;
+
+    /* header */
+    .loginbar {
+        color: colors.$primary_dark;
+
+        .loginbar__text {
+            font-weight: bold;
+            color: colors.$text;
+        }
+    }
 }
