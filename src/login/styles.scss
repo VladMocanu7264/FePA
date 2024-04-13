@@ -1,1 +1,11 @@
+@use '../visual/colors/colors' as colors;
 
+/* general */
+body {
+    background-color: colors.$bkg;
+}
+
+/* header */
+.loginbar__text {
+    color: colors.$bkg;
+}

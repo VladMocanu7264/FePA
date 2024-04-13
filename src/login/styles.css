@@ -1,1 +1,9 @@
-/*# sourceMappingURL=styles.css.map */
+/* general */
+body {
+  background-color: #FFFAF0;
+}
+
+/* header */
+.loginbar__text {
+  color: #FFFAF0;
+}/*# sourceMappingURL=styles.css.map */
