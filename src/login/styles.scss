@@ -4,19 +4,80 @@
 /* general */
 body {
     background-color: colors.$bkg;
+    
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
 
 .loginpage {
-    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
     @include fonts.main;
 
     /* header */
+    .fixed_header {
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        height: 7%;
+        width: 100%;
+        z-index: 9;
+
+        background-color: colors.$bkg;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .fixed_header__logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .app_name {
+            margin-left: 1%;
+
+            color: colors.$text;
+
+            font-weight: bold;
+            font-size: 2em;
+        }
+    }
+
     .loginbar {
-        color: colors.$primary_dark;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        height: 14%;
+        width: 100%;
+        z-index: 8;
+
+        background-color: colors.$primary_dark;
 
         .loginbar__text {
+            position: absolute;
+            margin-top: 63px;
+            margin-left: 2.5%;
+
+            background-color: colors.$primary_dark;
+            color: colors.$bkg;
+
             font-weight: bold;
-            color: colors.$text;
+            font-size: 2em;
         }
+    }
+
+    /* main part */
+    .main_part {
+        position: absolute;
+        top: 8em;
+        margin: 0;
+        padding: 0;
+        width: 100%;
     }
 }

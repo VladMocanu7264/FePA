@@ -1,17 +1,65 @@
 /* general */
 body {
   background-color: #FFFAF0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .loginpage {
-  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
   font-family: "Montserrat Alternates", sans-serif;
   /* header */
+  /* main part */
+}
+.loginpage .fixed_header {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  height: 7%;
+  width: 100%;
+  z-index: 9;
+  background-color: #FFFAF0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loginpage .fixed_header .fixed_header__logo {
+  height: 50px;
+  width: auto;
+}
+.loginpage .fixed_header .app_name {
+  margin-left: 1%;
+  color: #0F0600;
+  font-weight: bold;
+  font-size: 2em;
 }
 .loginpage .loginbar {
-  color: #2FCCAF;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  height: 14%;
+  width: 100%;
+  z-index: 8;
+  background-color: #2FCCAF;
 }
 .loginpage .loginbar .loginbar__text {
+  position: absolute;
+  margin-top: 63px;
+  margin-left: 2.5%;
+  background-color: #2FCCAF;
+  color: #FFFAF0;
   font-weight: bold;
-  color: #0F0600;
+  font-size: 2em;
+}
+.loginpage .main_part {
+  position: absolute;
+  top: 8em;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }/*# sourceMappingURL=styles.css.map */
