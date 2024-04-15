@@ -1,1 +1,78 @@
-/*# sourceMappingURL=styles.css.map */
+body {
+  background-color: #FFFAF0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Montserrat Alternates", sans-serif;
+  /* header */
+}
+.wrapper .fixed_header {
+  position: fixed;
+  margin: 0;
+  background-color: #2FCCAF;
+}
+.wrapper .fixed_header .header_container {
+  position: fixed;
+  margin: 0;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  height: 7vh;
+  width: 100vw;
+  background-color: #2FCCAF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .fixed_header .header_container .left_side_logo {
+  width: 25vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .fixed_header .header_container .left_side_logo .logo_container {
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+.wrapper .fixed_header .header_container .left_side_logo .logo_container .fepa_logo {
+  height: 48px;
+  width: auto;
+}
+.wrapper .fixed_header .header_container .left_side_logo .fepa_description {
+  padding-left: 1vw;
+  padding-right: 1vw;
+  color: #FFFAF0;
+}
+.wrapper .fixed_header .header_container .right_side_buttons {
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+.wrapper .fixed_header .header_container .right_side_buttons .button_signup {
+  font-size: 20px;
+  font-family: sans-serif;
+  background-color: #FFBB29;
+  color: #FFFAF0;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  padding: 1vh 1vw;
+  border: 0;
+  border-radius: 12px;
+}
+.wrapper .fixed_header .header_container .right_side_buttons .button_login {
+  font-size: 20px;
+  font-family: sans-serif;
+  background-color: #FFFAF0;
+  color: #55E6CB;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  padding: 1vh 1vw;
+  border: 0;
+  border-radius: 12px;
+}/*# sourceMappingURL=styles.css.map */

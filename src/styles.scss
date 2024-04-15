@@ -1,0 +1,91 @@
+@use 'visual/colors/colors' as colors;
+@use 'visual/fonts/fonts' as fonts;
+
+body {
+    background-color: colors.$bkg;    
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+    @include fonts.main;
+
+    /* header */
+    .fixed_header {
+        position: fixed;
+        margin: 0;
+        background-color: colors.$primary_dark;
+
+        .header_container {
+            position: fixed;
+            margin: 0;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+            height: 7vh;
+            width: 100vw;
+            background-color: colors.$primary_dark;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .left_side_logo {
+                width: 25vw;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .logo_container {
+                    padding-left: 2vw;
+                    padding-right: 2vw;
+
+                    .fepa_logo {
+                        height: 48px;
+                        width: auto;
+                    }
+                }
+
+                .fepa_description {
+                    padding-left: 1vw;
+                    padding-right: 1vw;
+                    color: colors.$bkg;
+                }
+            }
+
+            .right_side_buttons {
+                padding-left: 3vw;
+                padding-right: 3vw;
+
+                .button_signup {
+                    font-size: 20px;
+                    font-family: sans-serif;
+                    background-color: colors.$accent;
+                    color: colors.$bkg;
+                    margin-left: 0.5vw;
+                    margin-right: 0.5vw;
+                    padding: 1vh 1vw;
+                    border: 0;
+                    border-radius: 12px;
+                }
+
+                .button_login {
+                    font-size: 20px;
+                    font-family: sans-serif;
+                    background-color: colors.$bkg;
+                    color: colors.$primary_light;
+                    margin-left: 0.5vw;
+                    margin-right: 0.5vw;
+                    padding: 1vh 1vw;
+                    border: 0;
+                    border-radius: 12px;
+                }
+            }
+        }
+    }
+}
