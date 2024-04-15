@@ -1,3 +1,11 @@
+/*
+<div class = "fixed_header">
+    <img class = "fixed_header__logo" src = "../visual/img/FePA_logo.png">
+    <span class = "app_name">
+        FePA
+    </span>
+</div>
+*/
 /* general */
 body {
   background-color: #FFFAF0;
@@ -24,6 +32,7 @@ body {
   width: 100%;
   z-index: 9;
   background-color: #FFFAF0;
+  border-bottom: 2px solid #FFBB29;
   display: flex;
   align-items: center;
   justify-content: center;

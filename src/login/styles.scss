@@ -1,5 +1,6 @@
 @use '../visual/colors/colors' as colors;
 @use '../visual/fonts/fonts' as fonts;
+@use '../visual/reusable/main-header' as header;
 
 /* general */
 body {
@@ -20,34 +21,7 @@ body {
     @include fonts.main;
 
     /* header */
-    .fixed_header {
-        position: fixed;
-        margin: 0;
-        padding: 0;
-        height: 7%;
-        width: 100%;
-        z-index: 9;
-
-        background-color: colors.$bkg;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .fixed_header__logo {
-            height: 50px;
-            width: auto;
-        }
-
-        .app_name {
-            margin-left: 1%;
-
-            color: colors.$text;
-
-            font-weight: bold;
-            font-size: 2em;
-        }
-    }
+    @include header.style;
 
     .loginbar {
         position: absolute;
