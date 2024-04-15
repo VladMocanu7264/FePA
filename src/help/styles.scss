@@ -32,13 +32,26 @@ body {
         font-weight: bold;
 
         .helpbar__text {
+            position: relative;
             width: 47.5%;
             margin-top: 63px;
             margin-left: 2.5%;
             background-color: colors.$primary_dark;
-            color: colors.$bkg;
-            font-size: 2em;
             display: flex;
+            padding-right: 20px;
+
+            .headerarrow {
+                width: 8%;
+                .headerarrow__image {
+                    max-height: 100%;
+                }
+            }
+
+            .pagetitle {
+                width: 100%;
+                color: colors.$bkg;
+                font-size: 2em;
+            }
         }
 
         .helpbar__headerbuttons {

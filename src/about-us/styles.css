@@ -56,10 +56,22 @@ body {
   font-weight: bold;
 }
 .aboutus-page .aboutusbar .aboutusbar__text {
+  position: relative;
   width: 47.5%;
   margin-top: 63px;
   margin-left: 2.5%;
   background-color: #2FCCAF;
+  display: flex;
+  padding-right: 20px;
+}
+.aboutus-page .aboutusbar .aboutusbar__text .headerarrow {
+  width: 8%;
+}
+.aboutus-page .aboutusbar .aboutusbar__text .headerarrow .headerarrow__image {
+  max-height: 100%;
+}
+.aboutus-page .aboutusbar .aboutusbar__text .pagetitle {
+  width: 100%;
   color: #FFFAF0;
   font-size: 2em;
 }
