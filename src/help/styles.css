@@ -16,11 +16,11 @@ body {
   align-items: center;
 }
 
-.aboutus-page {
+.help-page {
   width: 100%;
   font-family: "Montserrat Alternates", sans-serif;
 }
-.aboutus-page .fixed_header {
+.help-page .fixed_header {
   position: fixed;
   margin: 0;
   padding: 0;
@@ -33,17 +33,17 @@ body {
   align-items: center;
   justify-content: center;
 }
-.aboutus-page .fixed_header .fixed_header__logo {
+.help-page .fixed_header .fixed_header__logo {
   height: 50px;
   width: auto;
 }
-.aboutus-page .fixed_header .app_name {
+.help-page .fixed_header .app_name {
   margin-left: 1%;
   color: #0F0600;
   font-weight: bold;
   font-size: 2em;
 }
-.aboutus-page .aboutusbar {
+.help-page .helpbar {
   position: relative;
   margin: 0;
   padding: 0;
@@ -55,15 +55,16 @@ body {
   flex-direction: row;
   font-weight: bold;
 }
-.aboutus-page .aboutusbar .aboutusbar__text {
+.help-page .helpbar .helpbar__text {
   width: 47.5%;
   margin-top: 63px;
   margin-left: 2.5%;
   background-color: #2FCCAF;
   color: #FFFAF0;
   font-size: 2em;
+  display: flex;
 }
-.aboutus-page .aboutusbar .aboutusbar__headerbuttons {
+.help-page .helpbar .helpbar__headerbuttons {
   width: 47.5%;
   margin-top: 63px;
   margin-right: 2.5%;
@@ -73,7 +74,7 @@ body {
   justify-items: center;
   color: #FFFAF0;
 }
-.aboutus-page .aboutusbar .aboutusbar__headerbuttons .headerbutton {
+.help-page .helpbar .helpbar__headerbuttons .headerbutton {
   margin-right: 0;
   margin-left: 10px;
   padding: 5px;
@@ -82,42 +83,42 @@ body {
   font-size: 1.2em;
   background-color: #FFBB29;
 }
-.aboutus-page .aboutusbar .aboutusbar__headerbuttons .headerbutton a {
+.help-page .helpbar .helpbar__headerbuttons .headerbutton a {
   color: #FFFAF0;
   text-decoration: none;
 }
-.aboutus-page .main-content-container {
+.help-page .main-content-container {
   width: 80%;
   margin: 0 auto;
 }
-.aboutus-page .main-content {
+.help-page .main-content {
   margin-top: 14%;
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
-.aboutus-page .main-content .top-left,
-.aboutus-page .main-content .top-right,
-.aboutus-page .main-content .middle-left,
-.aboutus-page .main-content .middle-right,
-.aboutus-page .main-content .bottom-left,
-.aboutus-page .main-content .bottom-right {
+.help-page .main-content .top-left,
+.help-page .main-content .top-right,
+.help-page .main-content .middle-left,
+.help-page .main-content .middle-right,
+.help-page .main-content .bottom-left,
+.help-page .main-content .bottom-right {
   display: flex;
   align-items: center;
   justify-items: center;
 }
-.aboutus-page .main-content .text-box {
+.help-page .main-content .text-box {
   padding: 20px;
   color: #0F0600;
   font-size: 1.3em;
 }
-.aboutus-page .main-content .image {
+.help-page .main-content .image {
   width: 700px;
   max-width: 100%;
   max-height: 100%;
 }
-.aboutus-page .main-content .bigger {
+.help-page .main-content .bigger {
   font-weight: bold;
   font-size: larger;
   color: #2FCCAF;
