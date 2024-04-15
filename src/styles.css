@@ -44,7 +44,7 @@ body {
   height: 48px;
   width: auto;
 }
-.wrapper .fixed_header .header_container .left_side_logo .fepa_description {
+.wrapper .fixed_header .header_container .left_side_logo .PawAlert_description {
   padding-left: 1vw;
   padding-right: 1vw;
   color: #FFFAF0;
@@ -227,7 +227,7 @@ body {
   padding-left: 0;
   padding-right: 0;
 }
-.wrapper .page_footer .footer_left_logo .footer_fepa_logo {
+.wrapper .page_footer .footer_left_logo .footer_PawAlert_logo {
   height: 96px;
   width: auto;
 }
