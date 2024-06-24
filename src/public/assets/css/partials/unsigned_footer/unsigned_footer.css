@@ -1,0 +1,14 @@
+footer {
+  background-color: #2FCCAF;
+  color: #FFFAF0;
+  padding: 1rem;
+  text-align: center;
+}
+footer a {
+  color: #FFFAF0;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+footer a:hover {
+  color: #55E6CB;
+}/*# sourceMappingURL=unsigned_footer.css.map */

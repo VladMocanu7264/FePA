@@ -1,0 +1,29 @@
+header {
+  background-color: #2FCCAF;
+  color: #FFFAF0;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-links a {
+  color: #FFFAF0;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+.nav-links a:hover {
+  color: #55E6CB;
+}/*# sourceMappingURL=unsigned_header.css.map */

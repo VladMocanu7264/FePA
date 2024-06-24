@@ -1,0 +1,46 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: url("/PawAlert/FePA/src/public/assets/images/LandingBkg.webp") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.landing-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.landing-title {
+  font-size: 3rem;
+  color: #2FCCAF;
+  margin-bottom: 2rem;
+}
+
+.landing-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.landing-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  color: #FFFAF0;
+  background-color: #2FCCAF;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.landing-button:hover {
+  background-color: #55E6CB;
+}/*# sourceMappingURL=landing.css.map */

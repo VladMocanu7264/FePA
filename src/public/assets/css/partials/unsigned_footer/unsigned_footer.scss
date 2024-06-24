@@ -1,0 +1,18 @@
+@import '../colors/colors';
+
+footer {
+    background-color: $primary_dark;
+    color: $bkg;
+    padding: 1rem;
+    text-align: center;
+
+    a {
+        color: $bkg;
+        text-decoration: none;
+        margin: 0 0.5rem;
+
+        &:hover {
+            color: $primary_light;
+        }
+    }
+}
