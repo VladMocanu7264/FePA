@@ -1,6 +1,7 @@
 <?php
 
-require_once __DIR__ . '/../controllers/PageController.php';
+//require_once __DIR__ . '/../vendor/altorouter/altorouter/AltoRouter.php';
+require_once __DIR__ . '/Controller.php';
 
 class App
 {
@@ -24,6 +25,7 @@ class App
 
         if ($match) {
             list($controller, $action) = explode('@', $match['target']);
+            require_once __DIR__ . '/../controllers/' . $controller . '.php';
             if (is_callable(array(new $controller, $action))) {
                 call_user_func_array(array(new $controller, $action), $match['params']);
             } else {

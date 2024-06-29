@@ -11,7 +11,7 @@ class AuthController extends Controller
 
     public function login()
     {
-        // Handle login logic
+        // Placeholder for login logic
     }
 
     public function showSignupForm()
@@ -21,6 +21,6 @@ class AuthController extends Controller
 
     public function signup()
     {
-        // Handle signup logic
+        // Placeholder for signup logic
     }
 }

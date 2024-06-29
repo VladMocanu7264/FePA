@@ -6,6 +6,8 @@ error_reporting(E_ALL);
 require_once __DIR__ . '/../dependencies/vendor/autoload.php';
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../core/App.php';
+require_once __DIR__ . '/../controllers/PageController.php';
+require_once __DIR__ . '/../controllers/AuthController.php';
 
 $router = new AltoRouter();
 $router->setBasePath('/PawAlert/FePA/src/public');

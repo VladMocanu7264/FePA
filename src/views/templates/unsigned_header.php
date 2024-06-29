@@ -5,7 +5,7 @@
         Paw Alert
     </div>
     <nav class="nav-links">
-        <a href="/login">Log in</a>
-        <a href="/signup">Sign up</a>
+        <a href="/PawAlert/FePA/src/public/login">Log in</a>
+        <a href="/PawAlert/FePA/src/public/signup">Sign up</a>
     </nav>
 </header>

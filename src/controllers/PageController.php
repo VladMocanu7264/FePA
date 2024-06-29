@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../core/Controler.php';
+require_once __DIR__ . '/../core/Controller.php';
 
 class PageController extends Controller
 {

@@ -11,8 +11,8 @@
     <div class="landing-page">
         <h1 class="landing-title">Paw Alert</h1>
         <div class="landing-buttons">
-            <a href="/login" class="landing-button">Log in</a>
-            <a href="/signup" class="landing-button">Sign up</a>
+            <a href="/PawAlert/FePA/src/public/login" class="landing-button">Log in</a>
+            <a href="/PawAlert/FePA/src/public/signup" class="landing-button">Sign up</a>
         </div>
     </div>
     <?php include_once __DIR__ . '/../templates/unsigned_footer.php'; ?>
