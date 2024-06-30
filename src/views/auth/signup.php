@@ -16,59 +16,54 @@
                 </h1>
             </div>
             <div class="signup-page__right">
-                <form class="signup-form">
-                    <div class="signup-form__field">
-                        <label for="last-name" class="signup-form__label">
-                            Last name
-                        </label>
-                        <input type="text" id="last-name" class="signup-form__input" placeholder="Enter your last name" required>
-                    </div>
-
-                    <div class="signup-form__field">
-                        <label for="first-name" class="signup-form__label">
-                            First name
-                        </label>
-                        <input type="text" id="first-name" class="signup-form__input" placeholder="Enter your first name" required>
-                    </div>
-
+                <form class="signup-form" action="/PawAlert/FePA/src/public/signup" method="POST" enctype="multipart/form-data">
                     <div class="signup-form__field">
                         <label for="email" class="signup-form__label">
                             Email
                         </label>
-                        <input type="email" id="email" class="signup-form__input" placeholder="Enter your email" required>
+                        <input type="email" id="email" name="email" class="signup-form__input" placeholder="Enter your email" required>
                     </div>
 
                     <div class="signup-form__field">
                         <label for="password" class="signup-form__label">
                             Password
                         </label>
-                        <input type="password" id="password" class="signup-form__input" placeholder="Enter your password" required>
+                        <input type="password" id="password" name="password" class="signup-form__input" placeholder="Enter your password" required>
                     </div>
 
                     <div class="signup-form__field">
                         <label for="confirm-password" class="signup-form__label">
                             Confirm Password
                         </label>
-                        <input type="password" id="confirm-password" class="signup-form__input" placeholder="Confirm your password" required>
+                        <input type="password" id="confirm-password" name="confirm-password" class="signup-form__input" placeholder="Confirm your password" required>
+                    </div>
+
+                    <div class="signup-form__field">
+                        <label for="name" class="signup-form__label">
+                            Name
+                        </label>
+                        <input type="text" id="name" name="name" class="signup-form__input" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="signup-form__field">
+                        <label for="profileImage" class="signup-form__label">
+                            Profile Image
+                        </label>
+                        <input type="file" id="profileImage" name="profileImage" class="signup-form__input">
+                    </div>
+
+                    <div class="signup-form__field">
+                        <label for="country" class="signup-form__label">
+                            Country
+                        </label>
+                        <input type="text" id="country" name="country" class="signup-form__input" placeholder="Enter your country" required>
                     </div>
 
                     <div class="signup-form__field">
                         <label for="city" class="signup-form__label">
                             City
                         </label>
-                        <input type="text" id="city" class="signup-form__input" placeholder="Enter your city" required>
-                    </div>
-
-                    <div class="signup-form__field">
-                        <label for="state" class="signup-form__label">
-                            State
-                        </label>         
-                        <select name="state" id="state" aria-placeholder="Select your state" class="signup-form__select" required>
-                            <option value="Iasi">Iasi</option>
-                            <option value="Suceava">Suceava</option>
-                            <option value="Botosani">Botosani</option>
-                            <option value="Vaslui">Vaslui</option>
-                        </select>
+                        <input type="text" id="city" name="city" class="signup-form__input" placeholder="Enter your city" required>
                     </div>
 
                     <button type="submit" class="signup-form__submit">
