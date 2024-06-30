@@ -1,18 +1,21 @@
-@import '../colors/colors';
+@use '../colors/colors' as colors;
+@use '../../partials/fonts/fonts' as fonts;
 
 footer {
-    background-color: $primary_dark;
-    color: $bkg;
-    padding: 1rem;
+    background-color: colors.$primary_dark;
+    color: colors.$bkg;
+    padding: 0.5rem;
     text-align: center;
+    @include fonts.main;
 
     a {
-        color: $bkg;
+        color: colors.$bkg;
         text-decoration: none;
         margin: 0 0.5rem;
+        font-weight: bold;
 
         &:hover {
-            color: $primary_light;
+            color: colors.$primary_light;
         }
     }
 }

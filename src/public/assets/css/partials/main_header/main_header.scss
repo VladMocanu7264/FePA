@@ -1,0 +1,56 @@
+@use '../../partials/colors/colors' as colors;
+@use '../../partials/fonts/fonts' as fonts;
+
+.main-header {
+    width: 100%;
+    background-color: colors.$primary_dark;
+    color: colors.$bkg;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    box-sizing: border-box;
+
+    .left-section {
+        display: flex;
+        align-items: center;
+
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: colors.$bkg;
+        }
+
+        .main-header__logo {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .app-name {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+
+    .right-section {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        a {
+            text-decoration: none;
+            color: colors.$bkg;
+            font-size: 1.5rem;
+            &:hover {
+                color: colors.$accent;
+            }
+        }
+
+        .main-header__avatar {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+    }
+}

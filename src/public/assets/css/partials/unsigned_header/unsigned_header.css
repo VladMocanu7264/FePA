@@ -1,7 +1,7 @@
 header {
   background-color: #2FCCAF;
   color: #FFFAF0;
-  padding: 1rem;
+  padding: 0.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,7 +9,7 @@ header {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -21,6 +21,7 @@ header {
 
 .nav-links a {
   color: #FFFAF0;
+  font-size: 1.5rem;
   text-decoration: none;
   margin-left: 1rem;
 }

@@ -1,1 +1,36 @@
-/*# sourceMappingURL=main_footer.css.map */
+.main-footer {
+  width: 100%;
+  background-color: #2FCCAF;
+  color: #FFFAF0;
+  text-align: center;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.main-footer .both-components {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 10px;
+}
+.main-footer .both-components .left-text {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.main-footer .both-components .right-links {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.main-footer .both-components .right-links a {
+  color: #FFFAF0;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.main-footer .both-components .right-links a:hover {
+  color: #FFBB29;
+}/*# sourceMappingURL=main_footer.css.map */

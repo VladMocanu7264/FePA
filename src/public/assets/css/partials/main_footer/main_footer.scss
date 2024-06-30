@@ -1,0 +1,44 @@
+@use '../../partials/colors/colors' as colors;
+@use '../../partials/fonts/fonts' as fonts;
+
+.main-footer {
+    width: 100%;
+    background-color: colors.$primary_dark;
+    color: colors.$bkg;
+    text-align: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    @include fonts.main;
+
+    .both-components {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 10px;
+
+        .left-text {
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .right-links {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            a {
+                color: colors.$bkg;
+                text-decoration: none;
+                margin: 0 0.5rem;
+                font-size: 0.75rem;
+                font-weight: bold;
+    
+                &:hover {
+                    color: colors.$accent;
+                }
+            }
+        }
+    }
+}

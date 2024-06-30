@@ -1,1 +1,46 @@
-/*# sourceMappingURL=main_header.css.map */
+.main-header {
+  width: 100%;
+  background-color: #2FCCAF;
+  color: #FFFAF0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  box-sizing: border-box;
+}
+.main-header .left-section {
+  display: flex;
+  align-items: center;
+}
+.main-header .left-section a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #FFFAF0;
+}
+.main-header .left-section .main-header__logo {
+  height: 40px;
+  margin-right: 10px;
+}
+.main-header .left-section .app-name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.main-header .right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.main-header .right-section a {
+  text-decoration: none;
+  color: #FFFAF0;
+  font-size: 1.5rem;
+}
+.main-header .right-section a:hover {
+  color: #FFBB29;
+}
+.main-header .right-section .main-header__avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}/*# sourceMappingURL=main_header.css.map */

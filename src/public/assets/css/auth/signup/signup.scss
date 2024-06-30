@@ -1,0 +1,119 @@
+@use '../../partials/colors/colors' as colors;
+@use '../../partials/fonts/fonts' as fonts;
+
+/* general */
+body {
+    background-color: colors.$bkg;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.signuppage {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include fonts.main;
+
+    .main-part {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .signup-page__left,
+        .signup-page__right {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .signup-page__image {
+            width: 400px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .signup-page__title {
+            color: colors.$primary_light;
+            font-size: 32px;
+            margin-top: 5px;
+        }
+
+        .signup-page__right {
+            background-color: colors.$bkg;
+        }
+
+        .signup-form {
+            width: 80%;
+            margin: 0 auto;
+
+            .signup-form__field {
+                margin-bottom: 10px;
+
+                .signup-form__label {
+                    display: block;
+                    margin-bottom: 5px;
+                }
+
+                .signup-form__select {
+                    width: 100%;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 5px;
+                    background-color: white;
+                    margin-top: 5px;
+                }
+            }
+
+            .signup-form__input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid colors.$bkg; 
+                border-radius: 5px;
+            }
+
+            .signup-form__submit {
+                width: 100%;
+                margin-top: 10px;
+                padding: 10px;
+                background-color: colors.$primary_dark; 
+                color: colors.$bkg; 
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: colors.$primary_light;
+                }
+            }
+        }
+
+        .login-text {
+            margin-top: 20px;
+            font-size: 14px;
+            color: colors.$text; 
+        }
+
+        .login-text__link {
+            color: colors.$accent;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
