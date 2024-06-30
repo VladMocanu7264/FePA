@@ -1,0 +1,59 @@
+@use '../../partials/colors/colors' as colors;
+@use '../../partials/fonts/fonts' as fonts;
+
+body {
+    background-color: colors.$bkg;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-page {
+    width: 100%;
+    @include fonts.main;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .main-content-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .main-content__title {
+            color: colors.$primary_dark;
+            font-size: 2em;
+        }
+
+        .main-content__contacts {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: colors.$text;
+
+            .link {
+                text-decoration: none;
+                color: colors.$primary_light;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: colors.$primary_dark;
+                }
+            }
+        }
+    }
+}
