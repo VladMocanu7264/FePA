@@ -1,8 +1,10 @@
-@import '../colors/colors';
+@use '../colors/colors' as colors;
+@use '../fonts/fonts' as fonts;
 
 header {
-    background-color: $primary_dark;
-    color: $bkg;
+    @include fonts.main;
+    background-color: colors.$primary_dark;
+    color: colors.$bkg;
     padding: 0.75rem;
     display: flex;
     justify-content: space-between;
@@ -23,12 +25,12 @@ header {
 }
 
 .nav-links a {
-    color: $bkg;
+    color: colors.$bkg;
     font-size: 1.5rem;
     text-decoration: none;
     margin-left: 1rem;
 
     &:hover {
-        color: $primary_light;
+        color: colors.$primary_light;
     }
 }

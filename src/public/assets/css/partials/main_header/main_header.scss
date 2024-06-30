@@ -1,27 +1,26 @@
-@use '../../partials/colors/colors' as colors;
-@use '../../partials/fonts/fonts' as fonts;
+@use '../colors/colors' as colors;
+@use '../fonts/fonts' as fonts;
 
 .main-header {
-    width: 100%;
+    @include fonts.main;
     background-color: colors.$primary_dark;
     color: colors.$bkg;
+    padding: 0.75rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem;
-    box-sizing: border-box;
-    @include fonts.main;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-    .left-section {
+.left-section {
+    display: flex;
+    align-items: center;
+
+    a {
         display: flex;
         align-items: center;
-
-        a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: colors.$bkg;
-        }
+        text-decoration: none;
+        color: colors.$bkg;
 
         .main-header__logo {
             height: 40px;
@@ -33,27 +32,63 @@
             font-weight: bold;
         }
     }
+}
 
-    .right-section {
-        display: flex;
-        align-items: center;
-        gap: 20px;
+.right-section {
+    display: flex;
+    align-items: center;
+
+    a {
+        color: colors.$bkg;
+        font-size: 1.5rem;
         font-weight: bold;
+        text-decoration: none;
+        margin-left: 1rem;
 
-        a {
-            text-decoration: none;
-            color: colors.$bkg;
-            font-size: 1.5rem;
-            font-weight: bold;
-            &:hover {
-                color: colors.$accent;
-            }
+        &:hover {
+            color: colors.$accent;
         }
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
 
         .main-header__avatar {
             height: 40px;
             width: 40px;
             border-radius: 50%;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: colors.$primary_dark;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 10px;
+
+            a {
+                margin-left: 0;
+                color: colors.$bkg;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                font-size: 1rem;
+
+                &:hover {
+                    background-color: colors.$primary_light;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+        &:hover .dropdown-content {
+            display: block;
         }
     }
 }
