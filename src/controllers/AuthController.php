@@ -31,10 +31,12 @@ class AuthController extends Controller
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $result = $this->userService->register($_POST);
+
             if ($result === 'User registered successfully!') {
-                header('Location: /PawAlert/FePA/src/public/login');
-                exit;
+                http_response_code(200);
+                echo $result;
             } else {
+                http_response_code(400);
                 echo $result;
             }
         }

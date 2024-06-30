@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up - Paw Alert</title>
     <link rel="stylesheet" href="/PawAlert/FePA/src/public/assets/css/auth/signup/signup.css">
+    <script src="/PawAlert/FePA/src/public/assets/js/signup.js" defer></script>
 </head>
 <body>
     <div class="signuppage">
@@ -16,7 +17,7 @@
                 </h1>
             </div>
             <div class="signup-page__right">
-                <form class="signup-form" action="/PawAlert/FePA/src/public/signup" method="POST" enctype="multipart/form-data">
+                <form class="signup-form" id="signup-form" enctype="multipart/form-data">
                     <div class="signup-form__field">
                         <label for="email" class="signup-form__label">
                             Email
@@ -66,9 +67,8 @@
                         <input type="text" id="city" name="city" class="signup-form__input" placeholder="Enter your city" required>
                     </div>
 
-                    <button type="submit" class="signup-form__submit">
-                        Sign up
-                    </button>
+                    <div id="signup-error" class="error-message"></div>
+                    <button type="submit" class="signup-form__submit">Sign up</button>
                 </form>
 
                 <p class="login-text">
