@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Post - Paw Alert</title>
     <link rel="stylesheet" href="/PawAlert/FePA/src/public/assets/css/posts/create/create.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="create-post-page">
         <h1 class="create-post-title">Create a New Post</h1>
-        <form id="create-post-form" enctype="multipart/form-data">
+        <form id="create-post-form">
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" id="title" name="title" required>
@@ -19,21 +27,15 @@
                 <textarea id="description" name="description" required></textarea>
             </div>
             <div class="form-group">
-                <label for="latitude">Latitude</label>
-                <input type="text" id="latitude" name="latitude" required>
-            </div>
-            <div class="form-group">
-                <label for="longitude">Longitude</label>
-                <input type="text" id="longitude" name="longitude" required>
-            </div>
-            <div class="form-group">
                 <label for="image">Image</label>
-                <input type="file" id="image" name="image" required>
+                <input type="file" id="image" name="image">
             </div>
-            <button type="submit">Create Post</button>
+            <div id="map"></div>
+            <button type="submit" disabled>Create Post</button>
         </form>
-        <div class="message"></div>
+        <div id="message"></div>
     </div>
-    <script src="/PawAlert/FePA/src/public/assets/js/posts/create.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/PawAlert/FePA/src/public/assets/js/create.js"></script>
 </body>
 </html>

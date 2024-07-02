@@ -5,22 +5,20 @@ body {
     background-color: colors.$bkg;
     margin: 0;
     padding: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh; /* Changed to vh */
     display: flex;
     flex-direction: column;
 }
 
 .create-post-page {
+    @include fonts.main;
     width: 100%;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    flex-grow: 1;
-    @include fonts.main;
+    align-items: center;
+    flex: 1;
 
     .create-post-title {
         font-size: 2rem;
@@ -51,6 +49,7 @@ body {
 
             input,
             textarea {
+                @include fonts.main;
                 padding: 0.5rem;
                 border-radius: 5px;
                 border: 1px solid colors.$primary_dark;
@@ -77,8 +76,14 @@ body {
         }
     }
 
-    .message {
+    #message {
         margin-top: 1rem;
         font-size: 1rem;
+    }
+
+    #map {
+        height: 400px;
+        width: 100%;
+        margin-top: 20px;
     }
 }
