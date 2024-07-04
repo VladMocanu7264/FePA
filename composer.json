@@ -1,0 +1,14 @@
+{
+    "name": "vendor/fe-p-a",
+    "description": "Description of project FePA.",
+    "authors": [
+        {
+            "name": "Len Ovo",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^v6.10",
+        "altorouter/altorouter": "^2.0"
+    }
+}

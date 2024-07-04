@@ -1,6 +1,5 @@
 <?php
 
-//require_once __DIR__ . '/../vendor/altorouter/altorouter/AltoRouter.php';
 require_once __DIR__ . '/Controller.php';
 
 class App

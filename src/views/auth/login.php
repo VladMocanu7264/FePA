@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paw Alert - Login</title>
     <link rel="stylesheet" href="/PawAlert/FePA/src/public/assets/css/auth/login/login.css">
+    <script src="/PawAlert/FePA/src/public/assets/js/login.js" defer></script>
 </head>
 <body>
     <div class="loginpage">
@@ -16,7 +17,7 @@
                 </h1>
             </div>
             <div class="login-page__right">
-                <form class="login-form" action="/PawAlert/FePA/src/public/login_process.php" method="POST">
+                <form class="login-form" id="login-form" enctype="multipart/form-data" method="POST">
                     <div class="login-form__field">
                         <label for="email" class="login-form__label">
                             Email
@@ -31,6 +32,7 @@
                         <input type="password" id="password" name="password" class="login-form__input" placeholder="Enter your password" required>
                     </div>
 
+                    <div id="login-error" class="error-message"></div>
                     <button type="submit" class="login-form__submit">
                         Login
                     </button>
