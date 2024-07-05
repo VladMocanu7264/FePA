@@ -17,20 +17,27 @@
 <body>
     <div class="post-details-page">
         <h1 class="post-title"><?php echo htmlspecialchars($post['title'] ?? ''); ?></h1>
-        <p class="post-time"><?php echo htmlspecialchars($post['time'] ?? ''); ?></p>
-        
-        <div class="post-user">
-            <span class="by">by</span>
-            <a href="/PawAlert/FePA/src/public/profile/<?php echo htmlspecialchars($post['userId']); ?>">
-                <img src="data:image/jpeg;base64,<?php echo base64_encode($post['userProfileImage'] ?? ''); ?>" alt="User Profile Image" class="user-profile-image">
-                <span class="user-name"><?php echo htmlspecialchars($post['userName'] ?? ''); ?></span>
-            </a>
-        </div>
-        
+        <p class="post-date">Posted on: <?php echo htmlspecialchars($post['time'] ?? ''); ?></p>
+        <p class="post-user">
+            <img src="data:image/jpeg;base64,<?php echo base64_encode($post['userProfileImage'] ?? ''); ?>" alt="User Profile" class="user-profile-image">
+            <a href="/PawAlert/FePA/src/public/profile/<?php echo htmlspecialchars($post['userId']); ?>"><?php echo htmlspecialchars($post['userName'] ?? ''); ?></a>
+        </p>
         <img src="data:image/jpeg;base64,<?php echo base64_encode($post['image'] ?? ''); ?>" alt="Post Image" class="post-image">
         <p class="description-title">Details:</p>
         <p class="post-description"><?php echo htmlspecialchars($post['description'] ?? ''); ?></p>
         <div id="map"></div>
+        <div class="post-tags">
+            <p class="tags-title">Tags:</p>
+            <?php if (!empty($post['tags'])): ?>
+                <ul>
+                    <?php foreach ($post['tags'] as $tag): ?>
+                        <li><?php echo htmlspecialchars($tag); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php else: ?>
+                <p>No tags associated with this post.</p>
+            <?php endif; ?>
+        </div>
     </div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>

@@ -24,7 +24,7 @@ body {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-.post-details-page .post-time {
+.post-details-page .post-date {
   font-size: 1rem;
   color: #0F0600;
   margin-top: 0;
@@ -33,27 +33,23 @@ body {
 .post-details-page .post-user {
   display: flex;
   align-items: center;
+  font-size: 1rem;
+  color: #0F0600;
+  margin-top: 0;
   margin-bottom: 1rem;
 }
-.post-details-page .post-user .by {
-  font-size: 0.8rem;
-  color: #0F0600;
+.post-details-page .post-user .user-profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   margin-right: 0.5rem;
 }
 .post-details-page .post-user a {
-  display: flex;
-  align-items: center;
+  color: #2FCCAF;
   text-decoration: none;
-  color: #0F0600;
 }
-.post-details-page .post-user a .user-profile-image {
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-.post-details-page .post-user a .user-name {
-  font-size: 1.2rem;
+.post-details-page .post-user a:hover {
+  text-decoration: underline;
 }
 .post-details-page .post-image {
   max-width: 80%;
@@ -75,4 +71,25 @@ body {
 .post-details-page #map {
   height: 400px;
   width: 80%;
+}
+.post-details-page .post-tags {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #0F0600;
+}
+.post-details-page .post-tags .tags-title {
+  font-weight: bold;
+  color: #55E6CB;
+}
+.post-details-page .post-tags ul {
+  list-style-type: none;
+  padding: 0;
+}
+.post-details-page .post-tags li {
+  background-color: #2FCCAF;
+  color: #FFFAF0;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin: 0.5rem 0.5rem 0 0;
 }/*# sourceMappingURL=show.css.map */

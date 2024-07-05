@@ -12,24 +12,14 @@ class Post
     public $image;
     public $time;
 
-    public function save($tags = [])
+    public function save()
     {
         global $mysqli;
 
         $stmt = $mysqli->prepare("INSERT INTO posts (userId, title, description, latitude, longitude, image, time) VALUES (?, ?, ?, ?, ?, ?, NOW())");
         $stmt->bind_param('issdds', $this->userId, $this->title, $this->description, $this->latitude, $this->longitude, $this->image);
 
-        if ($stmt->execute()) {
-            $postId = $mysqli->insert_id;
-            foreach ($tags as $tagId) {
-                $stmt = $mysqli->prepare("INSERT INTO Posts_Tags (postId, tagId) VALUES (?, ?)");
-                $stmt->bind_param('ii', $postId, $tagId);
-                $stmt->execute();
-            }
-            return true;
-        }
-
-        return false;
+        return $stmt->execute();
     }
 
     public function findById($id)
@@ -66,6 +56,9 @@ class Post
             echo "<script>console.log('Post Data: " . json_encode($post) . "');</script>";
         }
 
+        // Fetch tags
+        $post['tags'] = $this->getTagsByPostId($id);
+
         return $post;
     }
 
@@ -95,9 +88,38 @@ class Post
 
         $posts = [];
         while ($row = $result->fetch_assoc()) {
+            $row['tags'] = $this->getTagsByPostId($row['id']);
             $posts[] = $row;
         }
 
         return $posts;
+    }
+
+    private function getTagsByPostId($postId)
+    {
+        global $mysqli;
+
+        $stmt = $mysqli->prepare("
+            SELECT 
+                tags.name 
+            FROM 
+                tags 
+            JOIN 
+                posts_tags 
+            ON 
+                tags.id = posts_tags.tagId 
+            WHERE 
+                posts_tags.postId = ?
+        ");
+        $stmt->bind_param('i', $postId);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $tags = [];
+        while ($row = $result->fetch_assoc()) {
+            $tags[] = $row['name'];
+        }
+
+        return $tags;
     }
 }

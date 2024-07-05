@@ -1,7 +1,6 @@
 <?php
 
 require_once __DIR__ . '/../models/Post.php';
-require_once __DIR__ . '/../models/Tag.php';
 
 class PostService
 {
@@ -12,7 +11,6 @@ class PostService
         $latitude = $postData['latitude'];
         $longitude = $postData['longitude'];
         $image = $fileData['image'];
-        $tags = $postData['tags'] ?? [];
 
         if (empty($title) || empty($description) || empty($latitude) || empty($longitude)) {
             return 'Title, description, latitude, and longitude are required.';
@@ -32,7 +30,7 @@ class PostService
         $post->longitude = $longitude;
         $post->image = $imageContent;
 
-        $result = $post->save($tags);
+        $result = $post->save();
 
         if ($result) {
             return 'Post created successfully!';
