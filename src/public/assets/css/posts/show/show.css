@@ -1,1 +1,159 @@
-/*# sourceMappingURL=show.css.map */
+body {
+  background-color: #FFFAF0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-details-page {
+  font-family: "Montserrat Alternates", sans-serif;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post-details-page .post-title {
+  font-size: 2rem;
+  color: #2FCCAF;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.post-details-page .post-date {
+  font-size: 0.9rem;
+  color: #0F0600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.post-details-page .post-user {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #0F0600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.post-details-page .post-user .user-profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+.post-details-page .post-user a {
+  color: #2FCCAF;
+  text-decoration: none;
+}
+.post-details-page .post-user a:hover {
+  text-decoration: underline;
+}
+.post-details-page .post-image {
+  max-width: 80%;
+  height: auto;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.post-details-page .description-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #55E6CB;
+}
+.post-details-page .post-description {
+  font-size: 1.2rem;
+  color: #0F0600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.post-details-page #map {
+  height: 400px;
+  width: 80%;
+}
+.post-details-page .post-tags {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #0F0600;
+}
+.post-details-page .post-tags .tags-title {
+  font-weight: bold;
+  color: #55E6CB;
+}
+.post-details-page .post-tags ul {
+  list-style-type: none;
+  padding: 0;
+}
+.post-details-page .post-tags li {
+  background-color: #2FCCAF;
+  color: #FFFAF0;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin: 0.5rem 0.5rem 0 0;
+}
+.post-details-page .post-comments {
+  width: 100%;
+  margin-top: 2rem;
+}
+.post-details-page .post-comments h2 {
+  font-size: 1.5rem;
+  color: #2FCCAF;
+  margin-bottom: 1rem;
+}
+.post-details-page .post-comments form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.post-details-page .post-comments form input[type=text] {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #2FCCAF;
+}
+.post-details-page .post-comments form button {
+  padding: 0.5rem 1rem;
+  background-color: #2FCCAF;
+  color: #FFFAF0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.post-details-page .post-comments form button:hover {
+  background-color: #55E6CB;
+}
+.post-details-page .post-comments #comments-list {
+  width: 100%;
+}
+.post-details-page .post-comments #comments-list .comment {
+  background-color: #EFEFE0;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.post-details-page .post-comments #comments-list .comment .comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.post-details-page .post-comments #comments-list .comment .comment-header .comment-user-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+.post-details-page .post-comments #comments-list .comment .comment-header .comment-user-name {
+  font-weight: bold;
+  color: #2FCCAF;
+  margin-right: 0.5rem;
+}
+.post-details-page .post-comments #comments-list .comment .comment-header .comment-time {
+  font-size: 0.8rem;
+  color: #0F0600;
+}
+.post-details-page .post-comments #comments-list .comment p {
+  margin: 0;
+  color: #0F0600;
+}/*# sourceMappingURL=show.css.map */
