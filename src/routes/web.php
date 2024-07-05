@@ -10,3 +10,5 @@ $router->map('GET', '/contact', 'PageController@contact', 'contact');
 $router->map('GET', '/help', 'PageController@help', 'help');
 $router->map('GET', '/post/create', 'PostController@createPostForm', 'post_create_form');
 $router->map('POST', '/post/create', 'PostController@createPost', 'post_create');
+$router->map('GET', '/post/show/[i:id]', 'PostController@showPost', 'post_show');
+$router->map('GET', '/news', 'PostController@news', 'news');

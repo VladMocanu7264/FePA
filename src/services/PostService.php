@@ -38,4 +38,16 @@ class PostService
             return 'Failed to create post.';
         }
     }
+
+    public function getPostById($id)
+    {
+        $post = new Post();
+        return $post->findById($id);
+    }
+
+    public function getAllPosts()
+    {
+        $post = new Post();
+        return $post->findAll();
+    }
 }
