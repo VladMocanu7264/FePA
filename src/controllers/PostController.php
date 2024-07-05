@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../core/Controller.php';
 require_once __DIR__ . '/../services/PostService.php';
+require_once __DIR__ . '/../models/Tag.php';
 
 class PostController extends Controller
 {
@@ -19,7 +20,9 @@ class PostController extends Controller
 
     public function createPostForm()
     {
-        return $this->view('posts/create', [], 'main_header', 'main_footer');
+        $tagModel = new Tag();
+        $tags = $tagModel->getAllTags();
+        return $this->view('posts/create', ['tags' => $tags], 'main_header', 'main_footer');
     }
 
     public function createPost()
@@ -57,33 +60,32 @@ class PostController extends Controller
     }
 
     private function generateRssFeed($posts)
-{
-    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-    $baseUrl = $protocol . $_SERVER['HTTP_HOST'] . '/PawAlert/FePA/src/public';
+    {
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $baseUrl = $protocol . $_SERVER['HTTP_HOST'] . '/PawAlert/FePA/src/public';
 
-    $rssFeed = '<?xml version="1.0" encoding="UTF-8" ?>';
-    $rssFeed .= '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">';
-    $rssFeed .= '<channel>';
-    $rssFeed .= '<title>Paw Alert News</title>';
-    $rssFeed .= '<link>' . $baseUrl . '/news</link>';
-    $rssFeed .= '<description>Latest reports of unsupervised animals</description>';
-    $rssFeed .= '<language>en-us</language>';
-    $rssFeed .= '<atom:link href="' . $baseUrl . '/news" rel="self" type="application/rss+xml" />';
+        $rssFeed = '<?xml version="1.0" encoding="UTF-8" ?>';
+        $rssFeed .= '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">';
+        $rssFeed .= '<channel>';
+        $rssFeed .= '<title>Paw Alert News</title>';
+        $rssFeed .= '<link>' . $baseUrl . '/news</link>';
+        $rssFeed .= '<description>Latest reports of unsupervised animals</description>';
+        $rssFeed .= '<language>en-us</language>';
+        $rssFeed .= '<atom:link href="' . $baseUrl . '/news" rel="self" type="application/rss+xml" />';
 
-    foreach ($posts as $post) {
-        $rssFeed .= '<item>';
-        $rssFeed .= '<title>' . htmlspecialchars($post['title']) . '</title>';
-        $rssFeed .= '<description>' . htmlspecialchars($post['description']) . '</description>';
-        $rssFeed .= '<link>' . $baseUrl . '/post/show/' . $post['id'] . '</link>';
-        $rssFeed .= '<guid>' . $baseUrl . '/post/show/' . $post['id'] . '</guid>';
-        $rssFeed .= '<pubDate>' . date(DATE_RSS, strtotime($post['time'])) . '</pubDate>';
-        $rssFeed .= '</item>';
+        foreach ($posts as $post) {
+            $rssFeed .= '<item>';
+            $rssFeed .= '<title>' . htmlspecialchars($post['title']) . '</title>';
+            $rssFeed .= '<description>' . htmlspecialchars($post['description']) . '</description>';
+            $rssFeed .= '<link>' . $baseUrl . '/post/show/' . $post['id'] . '</link>';
+            $rssFeed .= '<guid>' . $baseUrl . '/post/show/' . $post['id'] . '</guid>';
+            $rssFeed .= '<pubDate>' . date(DATE_RSS, strtotime($post['time'])) . '</pubDate>';
+            $rssFeed .= '</item>';
+        }
+
+        $rssFeed .= '</channel>';
+        $rssFeed .= '</rss>';
+
+        return $rssFeed;
     }
-
-    $rssFeed .= '</channel>';
-    $rssFeed .= '</rss>';
-
-    return $rssFeed;
-}
-
 }

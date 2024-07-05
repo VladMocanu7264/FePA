@@ -12,14 +12,24 @@ class Post
     public $image;
     public $time;
 
-    public function save()
+    public function save($tags = [])
     {
         global $mysqli;
 
         $stmt = $mysqli->prepare("INSERT INTO posts (userId, title, description, latitude, longitude, image, time) VALUES (?, ?, ?, ?, ?, ?, NOW())");
         $stmt->bind_param('issdds', $this->userId, $this->title, $this->description, $this->latitude, $this->longitude, $this->image);
 
-        return $stmt->execute();
+        if ($stmt->execute()) {
+            $postId = $mysqli->insert_id;
+            foreach ($tags as $tagId) {
+                $stmt = $mysqli->prepare("INSERT INTO Posts_Tags (postId, tagId) VALUES (?, ?)");
+                $stmt->bind_param('ii', $postId, $tagId);
+                $stmt->execute();
+            }
+            return true;
+        }
+
+        return false;
     }
 
     public function findById($id)

@@ -30,6 +30,7 @@ body {
         background-color: colors.$bkg_dark;
         padding: 2rem;
         border-radius: 10px;
+        border: 1px solid colors.$primary_dark;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
@@ -57,8 +58,22 @@ body {
 
             textarea {
                 resize: vertical;
-                min-height: 100px;
+                min-height: 1rem;
             }
+
+            #tags {
+                width: 100%;
+                border: 1px solid colors.$primary_dark;
+                border-radius: 5px;
+                padding: 0.5rem;
+            }
+
+            .select2-container--default .select2-selection--multiple {
+                background-color: colors.$bkg;
+                border: 1px solid colors.$primary_dark;
+                border-radius: 5px;
+            }
+
         }
 
         button {

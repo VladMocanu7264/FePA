@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Initialize the Select2 plugin on the tags dropdown
+    $('#tags').select2();
+
     // Initialize the map
     var map = L.map('map').setView([47.156944, 27.590278], 13); // Centered on Iasi, Romania
 
