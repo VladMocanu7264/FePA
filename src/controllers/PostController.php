@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require_once __DIR__ . '/../core/Controller.php';
 require_once __DIR__ . '/../services/PostService.php';
@@ -87,5 +90,32 @@ class PostController extends Controller
         $rssFeed .= '</rss>';
 
         return $rssFeed;
+    }
+
+    public function addComment()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $result = $this->postService->addComment($_POST);
+
+            if ($result === 'Comment added successfully!') {
+                http_response_code(200);
+                echo json_encode(['status' => 'success', 'message' => $result]);
+            } else {
+                http_response_code(400);
+                echo json_encode(['status' => 'error', 'message' => $result]);
+            }
+        }
+    }
+
+    public function getComments($id)
+    {
+        //echo "<script>console.log('Post id: " . $id . "');</script>";
+
+        $comments = $this->postService->getCommentsByPostId($id);
+
+        //echo "<script>console.log('Comments: " . $comments . "');</script>";
+
+        header('Content-Type: application/json');
+        echo json_encode($comments);
     }
 }

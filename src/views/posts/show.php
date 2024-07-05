@@ -38,6 +38,17 @@
                 <p>No tags associated with this post.</p>
             <?php endif; ?>
         </div>
+        <div class="post-comments">
+            <h2>Comments</h2>
+            <form id="comment-form">
+                <input type="hidden" name="postId" value="<?php echo htmlspecialchars($post['id']); ?>">
+                <div class="form-group">
+                    <input type="text" name="comment" placeholder="Enter your comment" required>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+            <div id="comments-list"></div>
+        </div>
     </div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
@@ -48,6 +59,51 @@
         }).addTo(map);
 
         L.marker([<?php echo $post['latitude'] ?? 0; ?>, <?php echo $post['longitude'] ?? 0; ?>]).addTo(map);
+
+        // Fetch and display comments
+        function fetchComments() {
+            fetch('/PawAlert/FePA/src/public/post/get-comments/<?php echo htmlspecialchars($post['id']); ?>')
+                .then(response => response.json())
+                .then(data => {
+                    var commentsList = document.getElementById('comments-list');
+                    commentsList.innerHTML = '';
+                    data.forEach(comment => {
+                        var commentDiv = document.createElement('div');
+                        commentDiv.classList.add('comment');
+                        commentDiv.innerHTML = `
+                            <div class="comment-header">
+                                <img src="data:image/jpeg;base64,${comment.userProfileImage}" alt="User Profile" class="comment-user-image">
+                                <span class="comment-user-name">${comment.userName}</span>
+                                <span class="comment-time">${new Date(comment.time).toLocaleString()}</span>
+                            </div>
+                            <p>${comment.comment}</p>
+                        `;
+                        commentsList.appendChild(commentDiv);
+                    });
+                });
+        }
+
+        document.getElementById('comment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var formData = new FormData(this);
+
+            fetch('/PawAlert/FePA/src/public/post/add-comment', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    fetchComments();
+                    this.reset();
+                } else {
+                    alert(data.message);
+                }
+            });
+        });
+
+        fetchComments();
     </script>
 </body>
 </html>

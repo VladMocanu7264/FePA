@@ -1,6 +1,10 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require_once __DIR__ . '/../models/Post.php';
+require_once __DIR__ . '/../models/Comment.php';
 
 class PostService
 {
@@ -49,5 +53,34 @@ class PostService
     {
         $post = new Post();
         return $post->findAll();
+    }
+
+    public function addComment($postData)
+    {
+        $postId = $postData['postId'];
+        $userId = 2; // Replace with actual user ID logic
+        $comment = $postData['comment'];
+
+        if (empty($postId) || empty($comment)) {
+            return 'Post ID and comment are required.';
+        }
+
+        $commentModel = new Comment();
+        $commentModel->postId = $postId;
+        $commentModel->userId = $userId;
+        $commentModel->comment = $comment;
+
+        $result = $commentModel->save();
+
+        if ($result) {
+            return 'Comment added successfully!';
+        } else {
+            return 'Failed to add comment.';
+        }
+    }
+
+    public function getCommentsByPostId($postId)
+    {
+        return Comment::findByPostId($postId);
     }
 }
