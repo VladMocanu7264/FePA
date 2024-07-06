@@ -19,7 +19,17 @@ class AuthController extends Controller
 
     public function login()
     {
-        // Placeholder for login logic
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $result = $this->userService->login($_POST);
+
+            if ($result !== 'No user with the specific email/password combination was found.') {
+                http_response_code(200);
+                echo $result;
+            } else {
+                http_response_code(400);
+                echo $result;
+            }
+        }
     }
 
     public function showSignupForm()

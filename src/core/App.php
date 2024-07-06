@@ -27,8 +27,7 @@ class App
             list($controller, $action) = explode('@', $match['target']);
             require_once __DIR__ . '/../controllers/' . $controller . '.php';
             if (is_callable(array(new $controller, $action))) {
-                $controllerInstance = new $controller;
-                call_user_func_array(array($controllerInstance, $action), $match['params']);
+                call_user_func_array(array(new $controller, $action), $match['params']);
             } else {
                 echo "The method {$action} is not defined in the controller {$controller}";
             }

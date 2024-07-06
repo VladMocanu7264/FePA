@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../models/User.php';
+use Firebase\JWT\JWT;
 
 class UserService
 {
@@ -34,5 +35,29 @@ class UserService
         } else {
             return 'Error registering user.';
         }
+    }
+
+    public function login($data)
+    {
+        $user = User::findByEmail($data['email']);
+        
+        if(is_null($user) || !password_verify($data['password'], $user->password)) {
+            return 'No user with the specific email/password combination was found.';
+        }
+        
+        global $key;
+        $payload = [
+            'sub' => 'user',
+            'email' => $data['email'],
+            'name' => $user->name,
+            'profileImage' => base64_encode($user->profileImage), // Convert binary data to base64
+            'country' => $user->country,
+            'city' => $user->city,
+            'isAdmin' => $user->isAdmin,
+            'iat' => time(),
+            'exp' => time() + 3600
+        ];
+        $jwt = JWT::encode($payload, $key, 'HS256');
+        return $jwt;
     }
 }

@@ -2,6 +2,7 @@
 
 $router->map('GET', '/', 'PageController@landing', 'home');
 $router->map('GET', '/login', 'AuthController@showLoginForm', 'login');
+$router->map('POST', '/login', 'AuthController@login', 'login_post');
 $router->map('GET', '/signup', 'AuthController@showSignupForm', 'signup');
 $router->map('POST', '/signup', 'AuthController@register', 'signup_post');
 $router->map('GET', '/main', 'PostController@showMainPage', 'main');
