@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 /src/dependencies/vendor/
 /src/dependencies/composer.lock
+=======
+/nbproject/private/
+/vendor/
+>>>>>>> donia_andrei

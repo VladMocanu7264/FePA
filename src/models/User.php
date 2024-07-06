@@ -22,13 +22,38 @@ class User
 
         return $stmt->execute();
     }
-
     public static function findByEmail($email)
     {
         global $mysqli;
         
         $stmt = $mysqli->prepare('SELECT * FROM users WHERE email=?');
         $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        
+        if (is_null($row)) {
+            return null;
+        }
+        $user = new User();
+        $user->id = $row['id'];
+        $user->email = $row['email'];
+        $user->password = $row['password'];
+        $user->name = $row['name'];
+        $user->profileImage = $row['profileImage'];
+        $user->country = $row['country'];
+        $user->city = $row['city'];
+        $user->isAdmin = $row['isAdmin'];
+        
+        return $user;
+    }
+    
+    public static function findById($id)
+    {
+        global $mysqli;
+        
+        $stmt = $mysqli->prepare('SELECT * FROM users WHERE id=?');
+        $stmt->bind_param('i', $id);
         $stmt->execute();
         $result = $stmt->get_result();
         $row = $result->fetch_assoc();

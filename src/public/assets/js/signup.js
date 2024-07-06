@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         try {
             let response = await fetch('/PawAlert/FePA/src/public/signup', {
                 method: 'POST',
-                body: formData,
+                body: formData
             });
 
             let result = await response.text();

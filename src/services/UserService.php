@@ -36,7 +36,6 @@ class UserService
             return 'Error registering user.';
         }
     }
-
     public function login($data)
     {
         $user = User::findByEmail($data['email']);
