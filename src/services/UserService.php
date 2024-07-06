@@ -39,27 +39,20 @@ class UserService
     
     public function login($data)
     {
-        global $mysqli;
-        $email = $data['email'];
+        $user = User::findByEmail($data['email']);
         
-        $stmt = $mysqli->prepare('SELECT * FROM users WHERE email=?');
-        $stmt->bind_param('s', $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $row = $result->fetch_assoc();
-        if(is_null($row) || !password_verify($data['password'], $row['password'])) {
+        if(is_null($user) || !password_verify($data['password'], $user->password)) {
             return 'No user with the specific email/password combination was found.';
-        } else {
-            //TODO: read key from file
-            $key = 'd5a70265c2e32c176cbcc1c93493c41d66b32af7043c0c6e49d2d7433b220fec';
-            $payload = [
-                'sub' => 'user',
-                'email' => $email,
-                'iat' => time(),
-                'exp' => time() + 3600
-            ];
-            $jwt = JWT::encode($payload, $key, 'HS256');
-            return $jwt;
         }
+        
+        global $key;
+        $payload = [
+            'sub' => 'user',
+            'email' => $data['email'],
+            'iat' => time(),
+            'exp' => time() + 3600
+        ];
+        $jwt = JWT::encode($payload, $key, 'HS256');
+        return $jwt;
     }
 }
