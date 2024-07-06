@@ -48,6 +48,7 @@ class UserService
         global $key;
         $payload = [
             'sub' => 'user',
+            'id' => $user->id,
             'email' => $data['email'],
             'name' => $user->name,
             'profileImage' => base64_encode($user->profileImage),

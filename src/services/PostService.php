@@ -14,6 +14,7 @@ class PostService
         $description = $postData['description'];
         $latitude = $postData['latitude'];
         $longitude = $postData['longitude'];
+        $userId = $postData['userId'];
         $image = $fileData['image'];
 
         if (empty($title) || empty($description) || empty($latitude) || empty($longitude)) {
@@ -27,7 +28,7 @@ class PostService
         }
 
         $post = new Post();
-        $post->userId = 2;
+        $post->userId = $userId;
         $post->title = $title;
         $post->description = $description;
         $post->latitude = $latitude;

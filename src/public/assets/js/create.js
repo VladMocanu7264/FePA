@@ -42,6 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('latitude', latitude);
         formData.append('longitude', longitude);
 
+        let user = JSON.parse(sessionStorage.getItem("user"));
+        formData.append('userId', user.id);
+
         try {
             let response = await fetch('/PawAlert/FePA/src/public/post/create', {
                 method: 'POST',
