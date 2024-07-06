@@ -21,7 +21,7 @@ class ProfileController extends Controller
         
         $user_json['name'] = $user->name;
         $user_json['email'] = $user->email;
-        $user_json['profileImage'] = base64_encode($user->profileImage);
+        $user_json['profileImage'] = $user->profileImage ? base64_encode($user->profileImage) : null;
         $user_json['city'] = $user->city;
         $user_json['country'] = $user->country;
         $user_json['isAdmin'] = $user->isAdmin;

@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     let currentURL = window.location.href;
     let profileId = currentURL.substring(currentURL.lastIndexOf('/') + 1);
     
     try {
-        let response = await fetch('/PawAlert/FePA/src/public/fetch_profile/' + profileId, {
+        let response = await fetch('/PawAlert/FePA/src/public/fetch-profile/' + profileId, {
             method: 'GET'
         });
         
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         let profileImageElement = document.getElementById('profile-image');
         profileImageElement.src = 'data:image/jpeg;base64,' + user.profileImage;
-        let nameElement = document.getElementById('profile-image');
+        let nameElement = document.getElementById('name');
         nameElement.innerText = user.name;
         
     } catch (error) {
