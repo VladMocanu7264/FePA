@@ -16,4 +16,5 @@ $router->map('GET', '/news', 'PostController@news', 'news');
 $router->map('POST', '/post/add-comment', 'PostController@addComment', 'post_add_comment');
 $router->map('GET', '/post/get-comments/[i:id]', 'PostController@getComments', 'post_get_comments');
 $router->map('GET', '/profile/[i:id]', 'ProfileController@viewProfile', 'view_profile');
+$router->map('GET', '/fetch-profile/[i:id]', 'ProfileController@fetchProfile', 'fetch_profile');
 $router->map('GET', '/settings', 'PostController@getComments', 'edit_profile');

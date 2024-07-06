@@ -1,0 +1,58 @@
+@use '../../partials/colors/colors' as colors;
+@use '../../partials/fonts/fonts' as fonts;
+
+body {
+    background-color: colors.$bkg;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-page {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include fonts.main;
+    
+    .profile-content-container {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+        
+        .top-profile-header {
+            padding-bottom: 2%;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            width: 60%;
+            .avatar-container {
+                padding-right: 5%;
+                width: 200px;
+                height: 200px;
+            }
+            .name-email {
+                padding-left: 5%;
+                .bigger {
+                    font-size: 45;
+                }
+            }
+        }
+        
+        .bottom-profile-details {
+            padding-top: 2%;
+            width: 60%;
+        }
+    }
+}
