@@ -14,8 +14,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (response.ok) {
                 sessionStorage.setItem("token", token);
+                console.log(token);
 
                 let payload = JSON.parse(atob(token.split('.')[1]));
+                console.log(payload);
+
                 
                 sessionStorage.setItem("user", JSON.stringify({
                     id: payload.id,
@@ -26,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     city: payload.city,
                     isAdmin: payload.isAdmin
                 }));
+                console.log(sessionStorage.getItem('user'));
 
                 window.location.href = '/PawAlert/FePA/src/public/main';
             } else {

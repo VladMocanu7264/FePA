@@ -50,7 +50,7 @@ class UserService
             'sub' => 'user',
             'email' => $data['email'],
             'name' => $user->name,
-            'profileImage' => base64_encode($user->profileImage), // Convert binary data to base64
+            'profileImage' => base64_encode($user->profileImage),
             'country' => $user->country,
             'city' => $user->city,
             'isAdmin' => $user->isAdmin,

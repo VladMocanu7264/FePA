@@ -12,7 +12,7 @@
         <a href="/PawAlert/FePA/src/public/about">About Us</a>
         <a href="/PawAlert/FePA/src/public/help">Help</a>
         <div class="dropdown">
-            <img src="/PawAlert/FePA/src/public/assets/images/avatar.png" alt="Profile" class="main-header__avatar">
+            <img id="profile-image" src="/PawAlert/FePA/src/public/assets/images/avatar.png" alt="Profile" class="main-header__avatar">
             <div class="dropdown-content">
                 <a href="/PawAlert/FePA/src/public/profile">Profile</a>
                 <a href="/PawAlert/FePA/src/public/settings">Settings</a>
@@ -21,3 +21,4 @@
         </div>
     </div>
 </header>
+<script src="/PawAlert/FePA/src/public/assets/js/main_header.js"></script>
