@@ -118,4 +118,11 @@ class PostController extends Controller
         header('Content-Type: application/json');
         echo json_encode($comments);
     }
+
+    public function getPostsByTags()
+    {
+        $tagIds = isset($_GET['tagIds']) ? explode(',', $_GET['tagIds']) : [];
+        $posts = $this->postService->getPostsByTags($tagIds);
+        echo json_encode($posts);
+    }
 }

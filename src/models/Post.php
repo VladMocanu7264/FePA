@@ -52,8 +52,6 @@ class Post
 
         if (!$post) {
             echo "Fetch failed: (" . $stmt->errno . ") " . $stmt->error;
-        } else {
-            echo "<script>console.log('Post Data: " . json_encode($post) . "');</script>";
         }
 
         // Fetch tags
@@ -121,5 +119,54 @@ class Post
         }
 
         return $tags;
+    }
+
+    public function findByTag($tagId = null)
+    {
+        global $mysqli;
+
+        $query = "
+            SELECT 
+                posts.*, 
+                users.name as userName, 
+                users.profileImage as userProfileImage,
+                GROUP_CONCAT(tags.name SEPARATOR ', ') as tags
+            FROM 
+                posts 
+            JOIN 
+                users 
+            ON 
+                posts.userId = users.id
+            LEFT JOIN 
+                posts_tags 
+            ON 
+                posts.id = posts_tags.postId
+            LEFT JOIN 
+                tags 
+            ON 
+                posts_tags.tagId = tags.id
+        ";
+
+        if ($tagId !== null) {
+            $query .= "WHERE posts_tags.tagId = ?";
+        }
+
+        $query .= " GROUP BY posts.id ORDER BY posts.time DESC";
+
+        $stmt = $mysqli->prepare($query);
+
+        if ($tagId !== null) {
+            $stmt->bind_param('i', $tagId);
+        }
+
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $posts = [];
+
+        while ($row = $result->fetch_assoc()) {
+            $posts[] = $row;
+        }
+
+        return $posts;
     }
 }

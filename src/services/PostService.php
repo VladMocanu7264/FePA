@@ -59,7 +59,7 @@ class PostService
     public function addComment($postData)
     {
         $postId = $postData['postId'];
-        $userId = 2; // Replace with actual user ID logic
+        $userId = 2; 
         $comment = $postData['comment'];
 
         if (empty($postId) || empty($comment)) {
@@ -83,5 +83,12 @@ class PostService
     public function getCommentsByPostId($postId)
     {
         return Comment::findByPostId($postId);
+    }
+
+    public function getPostsByTags($tagIds)
+    {
+        $post = new Post();
+        $posts = $post->findByTag($tagIds);
+        return $posts;
     }
 }
