@@ -2,19 +2,90 @@ body {
   background-color: #FFFAF0;
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .main-page {
-  margin: 0;
-  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+  height: 100%;
+}
+.main-page .filter-section {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  padding-right: 2rem;
+}
+.main-page .filter-section #create-post-btn {
+  padding: 0.75rem;
+  background-color: #2FCCAF;
+  color: #FFFAF0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.main-page .filter-section #create-post-btn:hover {
+  background-color: #55E6CB;
+}
+.main-page .filter-section h2 {
+  font-size: 1.5rem;
+  color: #2FCCAF;
+  margin-bottom: 1rem;
+}
+.main-page .filter-section #filter-form {
+  display: flex;
+  flex-direction: column;
+}
+.main-page .filter-section #filter-form #tags-list {
+  margin-bottom: 1rem;
+}
+.main-page .filter-section #filter-form #tags-list label {
+  display: block;
+  font-size: 1rem;
+  color: #0F0600;
+  margin-bottom: 0.5rem;
+}
+.main-page .filter-section #filter-form button[type=submit] {
+  padding: 0.5rem;
+  background-color: #2FCCAF;
+  color: #FFFAF0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.main-page .filter-section #filter-form button[type=submit]:hover {
+  background-color: #55E6CB;
+}
+.main-page .posts-section {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Montserrat Alternates", sans-serif;
+}
+.main-page .posts-section .post {
+  background-color: #EFEFE0;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.main-page .posts-section .post .post-title {
+  font-size: 1.5rem;
+  color: #2FCCAF;
+  margin-bottom: 0.5rem;
+}
+.main-page .posts-section .post .post-description {
+  font-size: 1rem;
+  color: #0F0600;
+  margin-bottom: 0.5rem;
+}
+.main-page .posts-section .post .post-tags {
+  font-size: 0.9rem;
+  color: #55E6CB;
 }/*# sourceMappingURL=main_page.css.map */

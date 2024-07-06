@@ -5,19 +5,104 @@ body {
     background-color: colors.$bkg;
     margin: 0;
     padding: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 .main-page {
-    margin: 0;
-    padding: 0;
-    flex: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @include fonts.main;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    height: 100%;
+
+    .filter-section {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        padding-right: 2rem;
+
+        #create-post-btn {
+            padding: 0.75rem;
+            background-color: colors.$primary_dark;
+            color: colors.$bkg;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+
+            &:hover {
+                background-color: colors.$primary_light;
+            }
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: colors.$primary_dark;
+            margin-bottom: 1rem;
+        }
+
+        #filter-form {
+            display: flex;
+            flex-direction: column;
+
+            #tags-list {
+                margin-bottom: 1rem;
+
+                label {
+                    display: block;
+                    font-size: 1rem;
+                    color: colors.$text;
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            button[type="submit"] {
+                padding: 0.5rem;
+                background-color: colors.$primary_dark;
+                color: colors.$bkg;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1rem;
+
+                &:hover {
+                    background-color: colors.$primary_light;
+                }
+            }
+        }
+    }
+
+    .posts-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .post {
+            background-color: colors.$bkg_dark;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+            .post-title {
+                font-size: 1.5rem;
+                color: colors.$primary_dark;
+                margin-bottom: 0.5rem;
+            }
+
+            .post-description {
+                font-size: 1rem;
+                color: colors.$text;
+                margin-bottom: 0.5rem;
+            }
+
+            .post-tags {
+                font-size: 0.9rem;
+                color: colors.$primary_light;
+            }
+        }
+    }
 }
